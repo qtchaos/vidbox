@@ -40,7 +40,7 @@ The stream key can now be used to access the video stream using the `?k=STREAMKE
 
 ## Issues
 
-Once you get access to the JavaScript logic, you can easily just paste the functions into the console and get the keys, we should prevent this by using global variables and setting them in each key function so that the order of the keys being called is important. (or something similar)
+Once you get access to the JavaScript logic, you can easily just paste the functions into the console and get the keys, we should prevent this by using global variables, overwriting functions (window.atob) and setting them in each key function so that the order of the keys being called is important. (or something similar)
 
 ## Tools
 
