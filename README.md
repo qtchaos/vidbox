@@ -1,14 +1,14 @@
 # VidBox
 
-VidBox, a popular video streaming platform, has recently implemented a stream key system to combat content piracy and bandwidth theft. This system generates a short-lived, browser-specific key that's required to access video streams, making it seemingly impossible to view the content outside of their player.
+VidBox, a popular video streaming platform, has recently implemented a stream key system to combat content piracy and bandwidth theft. This system generates a short-lived, key that's required to access video streams, making it seemingly impossible to keep the video link alive for more than a minute.
 
-You are a security researcher who has been tasked with finding a way to bypass this security feature and access the video stream outside of the their video player, are you up for the task?
+You are a security researcher who has been tasked with finding a way to bypass this security feature by creating a stream key thats valid for a longer period of time, allowing you to share this link with your friends for weeks to come, are you up for the task?
 
 ## Strategy
 
 The browser loads a PNG file via loading.png?v=UNIXTIME[^1], this file contains the logic to generate the stream key. The provided unix time is used as the base string for the stream key if the unix time is in the future the server should error. The logic inside of the PNG should be plainly visible, obfuscated JavaScript (this would usually be WASM, but we simplify) so that the Attacker can feasibly reverse engineer the key generation process.
 
-The stream key is generated using the AES-128 algorithm with three keys being split up into three parts of the PNG, this essentially boils down to the following:
+The stream key is generated using the AES-ECB algorithm with three keys being split up into three parts of the PNG, this essentially boils down to the following:
 
 ```javascript
 const keys = [getKey1(), getKey2(), getKey3()];
@@ -28,15 +28,13 @@ The stream key can now be used to access the video stream using the `?k=STREAMKE
 
 ## Flags
 
-1. loading.png
-    - Shows you're on the right track
-2. Encryption algorithm (AES)
-    - You opened the PNG and found the encryption logic
-3. Key 1 (vidbox)
-4. Key 2 (com.zxing.client)
-5. Key 3 (MD5[YOUGOTME])
-6. A stream key for 01/01/2077 12:00:00 GMT (3376684800)
-    - You've successfully created a stream key that's in the future and can be used to access the video stream.
+1. Encryption algorithm (AES-ECB)
+    - You opened the PNG and found the encryption logic and or found the exposed config on the server
+2. Key 1 (aes_is_quite_tuf)
+3. Key 2 (ee.vidbox.client)
+4. Key 3 (CRC32[I meant what I said and I said what I meant.] + CRC32[A pirate's faithful one-hundred percent!])
+5. A stream key that's atleast a day in the future.
+    - Use the key to access the video stream, the server will return the flag.
 
 ## Issues
 
