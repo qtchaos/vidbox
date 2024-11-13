@@ -49,4 +49,4 @@ async function decryptOnce(input: string, key: string): Promise<string> {
 // console.log(`encrypted_data: ${encrypted_data}`);
 // console.log(await decrypt(encrypted_data));
 
-// console.log(firstCRCPart, secondCRCPart);
+// console.log(firstCRCPart, secondCRCPart, firstCRCPart + secondCRCPart);
