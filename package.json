@@ -5,7 +5,8 @@
         "packages/*"
     ],
     "scripts": {
-        "dev:server": "cd packages/server && bun run index.ts"
+        "dev:server": "cd packages/server && bun run index.ts",
+        "dev:client": "cd packages/client && bun dev"
     },
     "devDependencies": {
         "@types/bun": "latest"

@@ -1,0 +1,30 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html {
+	font-family: 'Space Grotesk', serif;
+	width: 100%;
+	color: #ffffff;
+
+	@apply bg-klunker font-medium;
+}
+
+nav {
+	@apply flex flex-row justify-between gap-4 py-4 w-full text-2xl bg-bunker align-middle px-52;
+}
+
+main {
+	@apply flex flex-col items-center justify-center p-4 h-full;
+}
+
+input {
+	@apply w-fit text-center placeholder:text-dove p-2 border border-shark rounded-xl text-white bg-vulcan max-w-[12rem] focus:outline-none;
+}
+
+.header-gradient {
+	background: linear-gradient(to right, #4dafff, #006cd8);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}

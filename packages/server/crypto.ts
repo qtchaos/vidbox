@@ -12,7 +12,7 @@ const secondCRCPart = crc32(
 ).toString(16);
 
 const keys = [
-    "aes_is_quite_tuf",
+    "a3s_is_qu1te_7uf",
     "ee.vidbox.client",
     firstCRCPart + secondCRCPart,
 ];
@@ -42,11 +42,3 @@ async function decryptOnce(input: string, key: string): Promise<string> {
         mode: mode.ECB,
     }).toString(enc.Utf8);
 }
-
-// console.log(`inited with keys: ${keys}`);
-
-// const encrypted_data = await encrypt("super secret data");
-// console.log(`encrypted_data: ${encrypted_data}`);
-// console.log(await decrypt(encrypted_data));
-
-// console.log(firstCRCPart, secondCRCPart, firstCRCPart + secondCRCPart);

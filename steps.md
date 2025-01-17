@@ -26,7 +26,7 @@ hint2: Look at the network tab in the browser's developer tools, see if there ar
 
 The encryption logic is being stored in a PNG file that's being loaded by the browser. Upon opening the file you will find that the code inside is mangled and unreadable. You need to find a way to deobfuscate the code and get the **three** keys being used to generate the stream key. The order of the keys matters, you need to figure out in what order they are being used.
 
-What is the first key? answer: `aes_is_quite_tuf`\
+What is the first key? answer: `a3s_is_qu1te_7uf`\
 hint: You can deobfuscate the code by using a tool like https://deobfuscate.relative.im/ or https://webcrack.netlify.app/
 
 # Step 4
