@@ -1,37 +1,43 @@
-<script>
+<script lang="ts">
 	// @ts-nocheck
 	import { onMount } from 'svelte';
 
-	onMount(() => {
+	onMount(async () => {
+		// Get the IMDB Id from the URL to pass onto the player
 		const id = new URL(window.location.href).searchParams.get('id');
 		if (!id) {
 			return;
 		}
 
-		const myPlayer = videojs('player');
-		// TODO: the key should be generated on the client following the steps in the readme
-		myPlayer.src({
+		// Wait for the stream key to be set on the page
+		const html = document.querySelector('html');
+		let key = html?.accessKey;
+		while (!key) {
+			await new Promise((resolve) => setTimeout(resolve, 100));
+			key = html?.accessKey;
+		}
+
+		const player = videojs('player');
+		player.src({
 			type: 'video/mp4',
-			src: `http://localhost:3000/stream?id=${id}&k=pD67BNg3j92RY3NgRIiyWCtmMJgld9w%2BLD3UkJxiOJ%2B4kj3z4tvkFMyXPgl0wUb%2B`
+			src: `http://localhost:3000/stream?id=${id}&k=${key}`
 		});
 	});
 </script>
 
 <svelte:head>
 	<link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
-	<script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+	<script type="text/javascript" src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+	<script type="module" src="./FaviconLoader.sys.mjs"></script>
+	<script
+		type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+	></script>
 </svelte:head>
 
 <main style="width: 100vw; height: 100vh; padding: 0; margin: 0;">
 	<!-- svelte-ignore a11y_media_has_caption -->
-	<video
-		id="player"
-		class="video-js"
-		controls
-		preload="auto"
-		data-setup={{}}
-		style="width: 100%; height: 100%;"
-	>
+	<video id="player" class="video-js" controls preload="auto" style="width: 100%; height: 100%;">
 		<p class="vjs-no-js">
 			To view this video please enable JavaScript, and consider upgrading to a web browser that
 			<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>

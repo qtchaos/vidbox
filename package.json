@@ -6,6 +6,7 @@
     ],
     "scripts": {
         "dev:server": "cd packages/server && bun run index.ts",
+        "serve:client": "cd packages/client && bun run build && bun run preview",
         "dev:client": "cd packages/client && bun dev"
     },
     "devDependencies": {
