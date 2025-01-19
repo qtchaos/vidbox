@@ -2,8 +2,8 @@
 let _x3341c = 0;
 let window = {
 	ccse3: 'loopytime',
-	be2: String,
-	fetch2: Number,
+	be2: function () {},
+	fetch2: function () {},
 	lgo: null,
 	fetch3: function () {}
 };
@@ -40,12 +40,14 @@ function _0x5d62() {
 	};
 	return _0x5d62();
 }
+
 const _0x1b9930 = _0x46b8;
 function _0x46b8(_0x5b5cda, _0x30a083) {
 	const _0x5d62d3 = _0x5d62();
 	return (
 		// eslint-disable-next-line no-func-assign, @typescript-eslint/no-unused-vars
 		(_0x46b8 = function (_0x46b87d, _0x3d302c) {
+			window.fetch3 = Math.floor(Date.now() / 1000);
 			_0x46b87d = _0x46b87d - 0x92;
 			let _0x5873fb = _0x5d62d3[_0x46b87d];
 			return _0x5873fb;
@@ -54,7 +56,6 @@ function _0x46b8(_0x5b5cda, _0x30a083) {
 	);
 }
 (function (_0x1e83e0, _0x33e0c0) {
-	window.fetch3 = Math.floor(Date.now() / 1000);
 	const _0x15ac4b = _0x46b8,
 		_0x623bd = _0x1e83e0();
 	// eslint-disable-next-line no-constant-condition, no-extra-boolean-cast
@@ -153,7 +154,9 @@ const _0x4b31d4 = _0x5a2d24
 
 // Recursive function that encrypts the input
 async function encrypt(input = '') {
-	if (!isNaN(Number(input)) && input.length === 10) {
+	console.log(input, window);
+	if (!isNaN(Number(input)) && String(input).length === 10) {
+		console.debug('Entering first stage, input:', input);
 		window.ccse3 = ['l', 'o', 'o', 'p', 'v', 'i', 'd'].join('');
 		return encrypt(
 			// prettier-ignore
@@ -166,12 +169,14 @@ async function encrypt(input = '') {
 		if (_0x2312 && window.ccse3 !== 'loopytime') {
 			_0x2312 = [231];
 		}
+		console.debug('Entering second stage, input:', input);
 
 		const jsz = encrypt(await encryptOnce(input, _x3341c + [22]));
 		_x3341c = null;
 		return jsz;
 	}
 
+	console.debug('Entering third stage, input:', input);
 	return await encryptOnce(input, _0x23912 + _0x4b31d4);
 }
 
@@ -179,6 +184,11 @@ async function encrypt(input = '') {
 async function encryptOnce(input, key) {
 	if (key.includes('t22')) {
 		key = key.replace('t22', 't');
+	}
+
+	// If the input is a number, convert it to a string
+	if (!isNaN(Number(input))) {
+		input = input.toString();
 	}
 
 	return window
