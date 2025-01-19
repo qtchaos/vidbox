@@ -1,5 +1,11 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+
 	let id: string = '1254207';
+
+	onMount(() => {
+		id = '1254207';
+	});
 
 	// TODO: current implementation doesnt allow shortcuts like Ctrl-X and Ctrl-Z which is a bit annoying
 	function handleKeyDown(event: KeyboardEvent) {
@@ -53,7 +59,7 @@
 		</p>
 		<div class="text-xl border-2 border-dove rounded-xl p-4 mt-8 w-fit">
 			By default you are accessing a trial API which limits the lifespan of the stream key to 10
-			seconds.
+			seconds from the time of generation.
 		</div>
 	</div>
 	<div>

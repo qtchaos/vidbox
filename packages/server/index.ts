@@ -22,9 +22,8 @@ api.registerRoute(
         const decryptedKey = await decrypt(streamKey);
         const keyDate = new Date(Number(decryptedKey) * 1000);
 
-        const expiryDate = new Date(keyDate.getTime() + 1 * 60 * 1000); // 10 minutes after the key was generated
-
-        // Check if the key used is more than 10 minutes old
+        const expirySeconds = 10;
+        const expiryDate = new Date(keyDate.getTime() + expirySeconds * 1000);
         if (new Date() > expiryDate) {
             return new Response("Key expired", {
                 status: 400,
@@ -39,14 +38,19 @@ api.registerRoute(
             });
         }
 
-        // Date that is 10s in the future
-        const dateInTheFuture = new Date(
+        // The threshold in seconds that the key should be in the future by to be a considered valid solve
+        const futureThreshold = new Date(
             // Date.now() + milliseconds * seconds * minutes * hours * days
-            Date.now() + 1000 * 60 * 10
+            Date.now() + expirySeconds * 1000
         );
 
+        // Age of the key relative to the threshold in seconds
+        const keyAge =
+            Math.floor((futureThreshold.getTime() - keyDate.getTime()) / 1000) -
+            10;
+
         // If the key is in the future, return the flag
-        if (keyDate.getTime() > dateInTheFuture.getTime()) {
+        if (keyDate.getTime() > futureThreshold.getTime()) {
             console.log(" <- Flag found!");
             id = 0;
         }
@@ -56,16 +60,15 @@ api.registerRoute(
             return new Response("Movie not found", { status: 404 });
         }
 
-        // If we are returning the sample video, then limit it to a slice of the video
+        // If we are returning the sample video (whenever the flag isn't found), then limit it to a slice of the video
         if (id !== 0) {
-            const durationInSeconds = 10;
+            // Get the absolute value incase we are more than 10s in the future and somehow we haven't returned the flag
+            const durationInSeconds = Math.abs(expirySeconds - keyAge);
 
             // Calculate the byte range to read based on the duration
             //                   bps * 1000 = kbps
             const videoBitrate = 380 * 1000;
             const bytesToRead = (videoBitrate / 8) * durationInSeconds;
-
-            // Slice the first x bytes of the video
             const fileBuffer = await file.arrayBuffer();
             const slicedBuffer = fileBuffer.slice(0, bytesToRead);
 
