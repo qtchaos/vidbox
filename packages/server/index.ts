@@ -60,15 +60,21 @@ api.registerRoute(
             return new Response("Movie not found", { status: 404 });
         }
 
+        // Disclaimer:
+        // We are essentially emulating the key expiring on the client by returning a video thats the duration of the key
+        // (compared to the user being able to watch any part of the video until the key expires)
+        // this is done because of the complication that Range headers produce
+        // maybe in the future this can be changed to be more accurate to what real key expiry would be like
+        // Disclaimer End
+
         // If we are returning the sample video (whenever the flag isn't found), then limit it to a slice of the video
         if (id !== 0) {
             // Get the absolute value incase we are more than 10s in the future and somehow we haven't returned the flag
             const durationInSeconds = Math.abs(expirySeconds - keyAge);
 
             // Calculate the byte range to read based on the duration
-            //                   bps * 1000 = kbps
-            const videoBitrate = 380 * 1000;
-            const bytesToRead = (videoBitrate / 8) * durationInSeconds;
+            const videoBitrate = 227; // kbps
+            const bytesToRead = ((videoBitrate * 1000) / 8) * durationInSeconds;
             const fileBuffer = await file.arrayBuffer();
             const slicedBuffer = fileBuffer.slice(0, bytesToRead);
 

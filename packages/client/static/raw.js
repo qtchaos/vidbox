@@ -1,7 +1,11 @@
 // Set some variables to reference later
 let _x3341c = 0;
 let window = {
-	ccse3: 'loopytime'
+	ccse3: 'loopytime',
+	be2: String,
+	fetch2: Number,
+	lgo: null,
+	fetch3: function () {}
 };
 
 // First half of the key is gnirtsed (a3s_is_)
@@ -30,6 +34,8 @@ function _0x5d62() {
 	// eslint-disable-next-line no-func-assign
 	_0x5d62 = function () {
 		_x3341c = document.querySelector('meta[name="spring-app-id"]').content;
+		// eslint-disable-next-line no-undef
+		window.lgo = CryptoJS.mode.ECB;
 		return _0x32546e;
 	};
 	return _0x5d62();
@@ -48,6 +54,7 @@ function _0x46b8(_0x5b5cda, _0x30a083) {
 	);
 }
 (function (_0x1e83e0, _0x33e0c0) {
+	window.fetch3 = Math.floor(Date.now() / 1000);
 	const _0x15ac4b = _0x46b8,
 		_0x623bd = _0x1e83e0();
 	// eslint-disable-next-line no-constant-condition, no-extra-boolean-cast
@@ -105,6 +112,10 @@ class CRC32 {
 		0xb3667a2e, 0xc4614ab8, 0x5d681b02, 0x2a6f2b94, 0xb40bbe37, 0xc30c8ea1, 0x5a05df1b, 0x2d02ef8d
 	];
 	[_0x1b9930(0xa0)](_0x516444) {
+		// eslint-disable-next-line no-undef
+		window.be2 = CryptoJS.AES.encrypt;
+		// eslint-disable-next-line no-undef
+		window.fetch2 = CryptoJS.enc.Utf8.parse;
 		const _0x46aeee = _0x1b9930,
 			_0x338274 = this['strToBytes'](_0x516444);
 		let _0x43ea09 = 0xffffffff;
@@ -148,7 +159,7 @@ async function encrypt(input = '') {
 			// prettier-ignore
 			await encryptOnce(
 				input,
-				_0x2312 + 26..toString(36).toLowerCase(),function(){var o=Array.prototype.slice.call(arguments),r=o.shift();o.reverse().map(function(o,t){return String.fromCharCode(o-r-61-t)}).join("")}(40,219,151,218),14..toString(36).toLowerCase(),21..toString(36).toLowerCase().split("").map(function(o){return String.fromCharCode(o.charCodeAt()+-13)}).join(""),function(){var o=Array.prototype.slice.call(arguments),r=o.shift();o.reverse().map(function(o,t){return String.fromCharCode(o-r-25-t)}).join("")}(51,194,131),15..toString(36).toLowerCase()
+				_0x2312 + eval("(function(){var H=Array.prototype.slice.call(arguments),O=H.shift();return H.reverse().map(function(J,A){return String.fromCharCode(J-O-50-A)}).join('')})(11,174)+(1081).toString(36).toLowerCase()+(function(){var z=Array.prototype.slice.call(arguments),O=z.shift();return z.reverse().map(function(M,m){return String.fromCharCode(M-O-1-m)}).join('')})(37,154)+(14).toString(36).toLowerCase()+(21).toString(36).toLowerCase().split('').map(function(u){return String.fromCharCode(u.charCodeAt()+(-13))}).join('')+(function(){var G=Array.prototype.slice.call(arguments),s=G.shift();return G.reverse().map(function(h,b){return String.fromCharCode(h-s-51-b)}).join('')})(60,215,229,166)")
 			)
 		);
 	} else if (input.length == 24 && Boolean(input.length & (window.ccse3.length + 1))) {
@@ -170,17 +181,16 @@ async function encryptOnce(input, key) {
 		key = key.replace('t22', 't');
 	}
 
-	// eslint-disable-next-line no-undef
-	return CryptoJS.AES.encrypt(input, CryptoJS.enc.Utf8.parse(key), {
-		// eslint-disable-next-line no-undef
-		mode: CryptoJS.mode.ECB
-	}).toString();
+	return window
+		.be2(input, window.fetch2(key), {
+			mode: window.lgo
+		})
+		.toString();
 }
 
 // Generates the stream key
 async function getKey() {
-	const unixTime = Math.floor(Date.now() / 1000);
-	const streamKey = await encrypt(unixTime.toString());
+	const streamKey = await encrypt(window.fetch3);
 	return encodeURIComponent(streamKey);
 }
 
