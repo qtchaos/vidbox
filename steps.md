@@ -1,6 +1,6 @@
 # Preface
 
-VidBox, a popular video streaming platform, has recently implemented a stream key system to combat content piracy and bandwidth theft. This system generates a short-lived key that's required to access video streams, making it seemingly impossible to keep the video link alive for more than a minute.
+VidBox, a popular video streaming platform, has recently implemented a stream key system to combat content piracy and bandwidth theft. This system generates a short-lived key that's required to access video streams, making it seemingly impossible to keep the video link alive for more than a few minutes.
 
 You are a security researcher who has been tasked with finding a way to bypass this security feature by creating a stream key thats valid for a longer period of time, allowing you to share this link with your friends for the foreseeable future, are you up for the task?
 
@@ -18,7 +18,7 @@ The key is being generated on the client, there has to be a way to find where th
 
 What file is the encryption logic being stored in?
 
-answer: `loading.png`\
+answer: `favicon.png`\
 hint: A common technique for obfuscating anything on the web is to use a file format different from the original, for example storing an `mp4` inside of a file with the `.png` extension.\
 hint2: Look at the network tab in the browser's developer tools, see if there are any images being loaded that aren't visible on the page.
 
@@ -27,11 +27,11 @@ hint2: Look at the network tab in the browser's developer tools, see if there ar
 The encryption logic is being stored in a PNG file that's being loaded by the browser. Upon opening the file you will find that the code inside is mangled and unreadable. You need to find a way to deobfuscate the code and get the **three** keys being used to generate the stream key. The order of the keys matters, you need to figure out in what order they are being used.
 
 What is the first key? answer: `a3s_is_qu1te_7uf`\
-hint: You can deobfuscate the code by using a tool like https://deobfuscate.relative.im/ or https://webcrack.netlify.app/
+hint: You can deobfuscate the code by using a tool like https://webcrack.netlify.app/
 
 # Step 4
 
-In order for you to generate your own stream key, you need to find the second key.
+In order for you to generate your own stream key, you need to find two more keys, the second one is hidden in plain sight so you shouldn't lose your **head**.
 
 What is the second key? answer: `ee.vidbox.client`\
 hint: This key is using reverse domain name notation (i.e com.google.client).

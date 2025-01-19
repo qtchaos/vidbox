@@ -1,40 +1,12 @@
-// Set some mysterious variables
+// Set some variables to reference later
 let _x3341c = 0;
 let window = {
 	ccse3: 'loopytime'
 };
 
 // First half of the key is gnirtsed (a3s_is_)
-let _0x2312 =
-	(363).toString(36).toLowerCase() +
-	(function () {
-		var Q = Array.prototype.slice.call(arguments),
-			n = Q.shift();
-		return Q.reverse()
-			.map(function (j, M) {
-				return String.fromCharCode(j - n - 4 - M);
-			})
-			.join('');
-	})(46, 165) +
-	(21)
-		.toString(36)
-		.toLowerCase()
-		.split('')
-		.map(function (x) {
-			return String.fromCharCode(x.charCodeAt() + -13);
-		})
-		.join('') +
-	(676).toString(36).toLowerCase() +
-	(function () {
-		var k = Array.prototype.slice.call(arguments),
-			F = k.shift();
-		return k
-			.reverse()
-			.map(function (h, Z) {
-				return String.fromCharCode(h - F - 50 - Z);
-			})
-			.join('');
-	})(36, 181);
+// prettier-ignore
+let _0x2312 = 363..toString(36).toLowerCase()+function(){var r=Array.prototype.slice.call(arguments),o=r.shift();return r.reverse().map(function(r,t){return String.fromCharCode(r-o-4-t)}).join("")}(46,165)+21..toString(36).toLowerCase().split("").map(function(r){return String.fromCharCode(r.charCodeAt()+-13)}).join("")+676..toString(36).toLowerCase()+function(){var r=Array.prototype.slice.call(arguments),o=r.shift();return r.reverse().map(function(r,t){return String.fromCharCode(r-o-50-t)}).join("")}(36,181);
 
 // Obfuscated CRC function meant as a red herring, you don't need to understand this function in order to complete the challenge
 function _0x5d62() {
@@ -55,6 +27,7 @@ function _0x5d62() {
 		'toUint32',
 		'calculate'
 	];
+	// eslint-disable-next-line no-func-assign
 	_0x5d62 = function () {
 		_x3341c = document.querySelector('meta[name="spring-app-id"]').content;
 		return _0x32546e;
@@ -65,6 +38,7 @@ const _0x1b9930 = _0x46b8;
 function _0x46b8(_0x5b5cda, _0x30a083) {
 	const _0x5d62d3 = _0x5d62();
 	return (
+		// eslint-disable-next-line no-func-assign, @typescript-eslint/no-unused-vars
 		(_0x46b8 = function (_0x46b87d, _0x3d302c) {
 			_0x46b87d = _0x46b87d - 0x92;
 			let _0x5873fb = _0x5d62d3[_0x46b87d];
@@ -76,6 +50,7 @@ function _0x46b8(_0x5b5cda, _0x30a083) {
 (function (_0x1e83e0, _0x33e0c0) {
 	const _0x15ac4b = _0x46b8,
 		_0x623bd = _0x1e83e0();
+	// eslint-disable-next-line no-constant-condition, no-extra-boolean-cast
 	while (!![]) {
 		try {
 			const _0x327e96 =
@@ -88,6 +63,7 @@ function _0x46b8(_0x5b5cda, _0x30a083) {
 				(parseInt(_0x15ac4b(0x92)) / 0x8) * (-parseInt(_0x15ac4b(0x97)) / 0x9);
 			if (_0x327e96 === _0x33e0c0) break;
 			else _0x623bd['push'](_0x623bd['shift']());
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 		} catch (_0x4a8cb2) {
 			_0x623bd['push'](_0x623bd['shift']());
 		}
@@ -157,49 +133,22 @@ const _0x5a2d24 = new CRC32();
 
 // First part of the Dr. Seuss key is gnirtsed (I meant what I said and I said what I meant.)
 // prettier-ignore
-const _0x23912=_0x5a2d24.calculate([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+(NaN+[].flat)["11"]+"e"+31["true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+""[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]][([][[]]+[])[1]+"false"[1]+(0[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]+[])["11"]+"true"[3]]]("32")+"al")()([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+""["false"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"true"[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"false"[2]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]()["12"]+("true"[0]+[4]+[7]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"true"[0]+[1]+[5]+[5]+"true"[3]+"false"[1]+([][[]]+[])[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[6]+[7]+"true"[0]+[1]+[5]+[0]+"false"[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"false"[3]+"false"[1]+([!1]+[][[]])["10"]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"false"[1]+([][[]]+[])[1]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"false"[3]+"false"[1]+([!1]+[][[]])["10"]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"true"[0]+[1]+[6]+[7]+"true"[0]+[1]+[5]+[0]+"false"[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"true"[0]+[1]+[5]+[5]+"true"[3]+"false"[1]+([][[]]+[])[1]+"true"[0]+[1]+[6]+[4]+(+("11"+"true"[3]+"20")+[])[1]+"true"[0]+[4]+[7])["false"[3]+211["true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+""[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]][([][[]]+[])[1]+"false"[1]+(0[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]+[])["11"]+"true"[3]]]("31")[1]+"false"[2]+([!1]+[][[]])["10"]+"true"[0]]("t")[([]["true"[3]+([][[]]+[])[1]+"true"[0]+"true"[1]+([!1]+[][[]])["10"]+"true"[3]+"false"[3]]()+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([!1]+[][[]])["10"]+([][[]]+[])[1]](([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+"false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"]+"false"+"false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"])()[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"])+[])[1])+""["false"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"true"[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"false"[2]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]()["12"])())).toString(16);
+const _0x23912 = _0x5a2d24.calculate([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+(NaN+[].flat)["11"]+"e"+31["true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+""[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]][([][[]]+[])[1]+"false"[1]+(0[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]+[])["11"]+"true"[3]]]("32")+"al")()([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+""["false"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"true"[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"false"[2]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]()["12"]+("true"[0]+[4]+[7]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"true"[0]+[1]+[5]+[5]+"true"[3]+"false"[1]+([][[]]+[])[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[6]+[7]+"true"[0]+[1]+[5]+[0]+"false"[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"false"[3]+"false"[1]+([!1]+[][[]])["10"]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"false"[1]+([][[]]+[])[1]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"false"[3]+"false"[1]+([!1]+[][[]])["10"]+([][[]]+[])[2]+"true"[0]+[4]+[0]+"true"[0]+[1]+[6]+[7]+"true"[0]+[1]+[5]+[0]+"false"[1]+"true"[0]+[1]+[6]+[4]+"true"[0]+[4]+[0]+"true"[0]+[1]+[1]+[1]+"true"[0]+[4]+[0]+"true"[0]+[1]+[5]+[5]+"true"[3]+"false"[1]+([][[]]+[])[1]+"true"[0]+[1]+[6]+[4]+(+("11"+"true"[3]+"20")+[])[1]+"true"[0]+[4]+[7])["false"[3]+211["true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+""[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]][([][[]]+[])[1]+"false"[1]+(0[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]+[])["11"]+"true"[3]]]("31")[1]+"false"[2]+([!1]+[][[]])["10"]+"true"[0]]("t")[([]["true"[3]+([][[]]+[])[1]+"true"[0]+"true"[1]+([!1]+[][[]])["10"]+"true"[3]+"false"[3]]()+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([!1]+[][[]])["10"]+([][[]]+[])[1]](([]["false"[0]+"false"[2]+"false"[1]+"true"[0]][([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("ret"+([][[]]+[])[0]+"r"+([][[]]+[])[1]+"false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"]+"false"+"false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"])()[([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"false"[3]+"true"[0]+"true"[1]+([][[]]+[])[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"true"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]("false0"[([!1]+[][[]])["10"]+"true"[0]+"false"[1]+"false"[2]+([!1]+[][[]])["10"]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+"false"[3]]()["10"])+[])[1])+""["false"[0]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+([][[]]+[])[1]+"true"[0]+([]["false"[0]+"false"[2]+"false"[1]+"true"[0]]+[])[3]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"false"[2]+(!0+[]["false"[0]+"false"[2]+"false"[1]+"true"[0]])["10"]+"true"[1]]()["12"])())).toString(16);
 
 // Second part of the Dr. Seuss key
-const _0x4b31d4 = _0x5a2d24.calculate("A pirate's faithful one-hundred percent!").toString(16);
+const _0x4b31d4 = _0x5a2d24
+	.calculate(atob('QSBwaXJhdGUncyBmYWl0aGZ1bCBvbmUtaHVuZHJlZCBwZXJjZW50IQ=='))
+	.toString(16);
 
 // Recursive function that encrypts the input
 async function encrypt(input = '') {
 	if (!isNaN(Number(input)) && input.length === 10) {
 		window.ccse3 = ['l', 'o', 'o', 'p', 'v', 'i', 'd'].join('');
 		return encrypt(
+			// prettier-ignore
 			await encryptOnce(
 				input,
-				_0x2312 +
-					(26).toString(36).toLowerCase() +
-					(function () {
-						var T = Array.prototype.slice.call(arguments),
-							h = T.shift();
-						return T.reverse()
-							.map(function (e, I) {
-								return String.fromCharCode(e - h - 61 - I);
-							})
-							.join('');
-					})(40, 219, 151, 218) +
-					(14).toString(36).toLowerCase() +
-					(21)
-						.toString(36)
-						.toLowerCase()
-						.split('')
-						.map(function (R) {
-							return String.fromCharCode(R.charCodeAt() + -13);
-						})
-						.join('') +
-					(function () {
-						var a = Array.prototype.slice.call(arguments),
-							t = a.shift();
-						return a
-							.reverse()
-							.map(function (H, N) {
-								return String.fromCharCode(H - t - 25 - N);
-							})
-							.join('');
-					})(51, 194, 131) +
-					(15).toString(36).toLowerCase()
+				_0x2312 + 26..toString(36).toLowerCase(),function(){var o=Array.prototype.slice.call(arguments),r=o.shift();o.reverse().map(function(o,t){return String.fromCharCode(o-r-61-t)}).join("")}(40,219,151,218),14..toString(36).toLowerCase(),21..toString(36).toLowerCase().split("").map(function(o){return String.fromCharCode(o.charCodeAt()+-13)}).join(""),function(){var o=Array.prototype.slice.call(arguments),r=o.shift();o.reverse().map(function(o,t){return String.fromCharCode(o-r-25-t)}).join("")}(51,194,131),15..toString(36).toLowerCase()
 			)
 		);
 	} else if (input.length == 24 && Boolean(input.length & (window.ccse3.length + 1))) {
@@ -242,9 +191,6 @@ root.accessKey = await getKey();
 // Wait for the video to finish loading, then self-destruct evidence
 const interval = setInterval(() => {
 	if (document.querySelector('video').readyState === 4) {
-		window.ccse3 = '';
-		_x3341c = 0;
-		_0x2312 = '';
 		root.accessKey = null;
 		document.querySelector('script#favicon').remove();
 		document.querySelector('script[src="./FaviconLoader.sys.mjs"]').remove();
@@ -254,5 +200,5 @@ const interval = setInterval(() => {
 }, 100);
 
 // MINIFY AND CLEAN UP CODE TO PASTE INTO THE FINAL FILE!!!
-// The final file is a fake favicon.png with a zero width character in the end in order to trick some browsers into displaying it in the devtools as a normal favicon request
+// The final file is a fake favicon.png with a zero width character in the end in order to trick firefox based browsers into displaying it in the devtools as a normal favicon request
 // Minify using https://www.toptal.com/developers/javascript-minifier

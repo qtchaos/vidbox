@@ -6,7 +6,8 @@ html {
 	font-family: 'Space Grotesk', serif;
 	width: 100%;
 	color: #ffffff;
-
+	overflow-x: hidden;
+	scroll-behavior: smooth;
 	@apply bg-klunker font-medium;
 }
 

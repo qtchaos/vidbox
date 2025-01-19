@@ -39,9 +39,10 @@ api.registerRoute(
             });
         }
 
-        // Date that is 0.5 days in the future
+        // Date that is 10s in the future
         const dateInTheFuture = new Date(
-            Date.now() + 1000 * 60 * 60 * 24 * 0.5
+            // Date.now() + milliseconds * seconds * minutes * hours * days
+            Date.now() + 1000 * 60 * 10
         );
 
         // If the key is in the future, return the flag
@@ -50,17 +51,42 @@ api.registerRoute(
             id = 0;
         }
 
-        const file = Bun.file(`assets/${id}.mp4`);
+        const file = Bun.file(`assets/${id}.webm`);
         if (!file) {
             return new Response("Movie not found", { status: 404 });
         }
 
+        // If we are returning the sample video, then limit it to a slice of the video
+        if (id !== 0) {
+            const durationInSeconds = 10;
+
+            // Calculate the byte range to read based on the duration
+            //                   bps * 1000 = kbps
+            const videoBitrate = 380 * 1000;
+            const bytesToRead = (videoBitrate / 8) * durationInSeconds;
+
+            // Slice the first x bytes of the video
+            const fileBuffer = await file.arrayBuffer();
+            const slicedBuffer = fileBuffer.slice(0, bytesToRead);
+
+            return new Response(slicedBuffer, {
+                headers: {
+                    "Content-Type": "video/webm",
+                    "Content-Length": bytesToRead.toString(),
+                    "Content-Range": `bytes=0-${bytesToRead - 1}/${bytesToRead}`,
+                    "Cache-Control": "max-age=0, must-revalidate",
+                },
+                status: 206,
+            });
+        }
+
         return new Response(file.stream(), {
             headers: {
-                "Content-Type": "video/mp4",
+                "Content-Type": "video/webm",
                 "Content-Length": file.size.toString(),
                 "Cache-Control": "max-age=0, must-revalidate",
             },
+            status: 200,
         });
     }
 );
