@@ -22,6 +22,11 @@
 			type: 'video/mp4',
 			src: `http://localhost:3000/stream?id=${id}&k=${key}`
 		});
+
+		while (true) {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			debugger;
+		}
 	});
 </script>
 

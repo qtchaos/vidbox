@@ -3,8 +3,12 @@
 
 	let id: string = '1254207';
 
-	onMount(() => {
+	onMount(async () => {
 		id = '1254207';
+		while (true) {
+			await new Promise((resolve) => setTimeout(resolve, 1000));
+			debugger;
+		}
 	});
 
 	// TODO: current implementation doesnt allow shortcuts like Ctrl-X and Ctrl-Z which is a bit annoying

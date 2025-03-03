@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
         ports:
             - 80/tcp
-        command: ["bun", "index.js"]
+        command: ["bun", "run", "preview"]
 
     backend:
         build:
@@ -15,4 +15,4 @@ services:
             dockerfile: Dockerfile
         ports:
             - 3000/tcp
-        command: ["bun", "run", "index.ts"]
+        command: ["bun", "run", "src/index.ts"]

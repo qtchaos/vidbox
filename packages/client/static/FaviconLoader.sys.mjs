@@ -177,6 +177,8 @@ async function getFavicon() {
 	return text;
 }
 
+window['console']['log'] = function () {debugger;};
+
 // Attach the favicon script to the page to load the JS
 const head = document.getElementsByTagName('head')[0];
 const script = document.createElement('script');

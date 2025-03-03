@@ -9,7 +9,7 @@ You are a security researcher who has been tasked with finding a way to bypass t
 
 ## Strategy
 
-The browser loads a PNG file via loading.png?v=UNIXTIME[^1], this file contains the logic to generate the stream key. The provided unix time is used as the base string for the stream key if the unix time is in the future the server should error. The logic inside of the PNG should be plainly visible, obfuscated JavaScript (this would usually be WASM, but we simplify) so that the Attacker can feasibly reverse engineer the key generation process.
+The browser loads a PNG file which contains the logic to generate the stream key. The current unix time is used as the base string for the stream key. The logic inside of the PNG should be plainly visible, obfuscated JavaScript (this would usually be WASM, but we simplify) so that the attacker can feasibly reverse engineer the key generation process within the allocated challenge time.
 
 The stream key is generated using the AES-ECB algorithm with three keys being split up into three parts of the PNG, this essentially boils down to the following:
 
@@ -31,12 +31,9 @@ The stream key can now be used to access the video stream using the `?k=STREAMKE
 
 ## Flags
 
-1. Encryption algorithm (AES-ECB)
-    - You opened the PNG and found the encryption logic and or found the exposed config on the server
-2. Key 1 (aes_is_quite_tuf)
-3. Key 2 (ee.vidbox.client)
-4. Key 3 (CRC32[I meant what I said and I said what I meant.] + CRC32[A pirate's faithful one-hundred percent!])
-5. A stream key that's atleast a day in the future.
+- Encryption algorithm being used
+- Algorithm keys hidden in the client-side logic
+- A stream key that's atleast a day in the future
     - Use the key to access the video stream, the server will return the flag.
 
 ## Issues

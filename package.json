@@ -5,7 +5,7 @@
         "packages/*"
     ],
     "scripts": {
-        "dev:server": "cd packages/server && bun run --hot index.ts",
+        "dev:server": "cd packages/server && bun run --hot src/index.ts",
         "serve:client": "cd packages/client && bun run build && bun run preview",
         "dev:client": "cd packages/client && bun dev"
     },

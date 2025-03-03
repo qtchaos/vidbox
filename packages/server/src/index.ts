@@ -1,7 +1,8 @@
-import { version } from "./package.json";
+import { version } from "../package.json";
 import { decrypt, encrypt } from "./crypto";
 import { RequestHandler } from "./requests";
 
+const DEBUG = Number(process.env.DEBUG) === 1;
 const PORT = 3000;
 const api = new RequestHandler(PORT);
 
@@ -54,7 +55,7 @@ api.registerRoute(
             id = 0;
         }
 
-        const file = Bun.file(`assets/${id}.webm`);
+        const file = Bun.file(`../assets/${id}.webm`);
         if (!file) {
             return new Response("Movie not found", { status: 404 });
         }
@@ -99,20 +100,22 @@ api.registerRoute(
     }
 );
 
-api.registerRoute(
-    "/debug/key",
-    "Generates a stream key given a date",
-    async (_, requestURL) => {
-        let unixTime = Math.floor(Date.now() / 1000);
-        const userSpecifiedDate = requestURL.searchParams.get("epoch");
-        if (userSpecifiedDate) {
-            unixTime = Number(userSpecifiedDate);
-        }
+if (DEBUG) {
+    api.registerRoute(
+        "/debug/key",
+        "Generates a stream key given a date",
+        async (_, requestURL) => {
+            let unixTime = Math.floor(Date.now() / 1000);
+            const userSpecifiedDate = requestURL.searchParams.get("epoch");
+            if (userSpecifiedDate) {
+                unixTime = Number(userSpecifiedDate);
+            }
 
-        const streamKey = await encrypt(unixTime.toString());
-        return new Response(encodeURIComponent(streamKey));
-    }
-);
+            const streamKey = await encrypt(unixTime.toString());
+            return new Response(encodeURIComponent(streamKey));
+        }
+    );
+}
 
 api.registerRoute(
     "/",
@@ -139,7 +142,7 @@ api.registerRoute(
                     length: 128,
                     iv: null,
                 },
-                debug: false,
+                debug: DEBUG,
             }),
             {
                 headers: {
