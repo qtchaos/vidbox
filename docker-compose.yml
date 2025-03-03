@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+    frontend:
+        build:
+            context: ./packages/client
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        command: ["bun", "run", "preview"]
+
+    backend:
+        build:
+            context: ./packages/server
+            dockerfile: Dockerfile
+        ports:
+            - 3000:3000
+        command: ["bun", "run", "index.ts"]
