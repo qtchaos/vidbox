@@ -6,8 +6,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
-		"prepare": "svelte-kit sync"
+		"preview": "vite preview"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.7",
@@ -26,12 +25,12 @@
 		"tailwindcss": "4.0.9",
 		"typescript": "^5.8.2",
 		"typescript-eslint": "^8.25.0",
+		"svelte": "^5.20.5",
 		"vite": "6.2.0"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.9",
 		"crypto-js": "^4.2.0",
-		"easy-crc": "^1.1.0",
-		"svelte": "^5.20.5"
+		"easy-crc": "^1.1.0"
 	}
 }

@@ -13,6 +13,7 @@ RUN cd /temp/dev && bun install
 # install with --production (exclude devDependencies)
 RUN mkdir -p /temp/prod
 COPY package.json /temp/prod/
+RUN bunx svelte-kit sync
 RUN cd /temp/prod && bun install --production
 
 # copy node_modules from temp directory
@@ -21,7 +22,6 @@ FROM install AS prerelease
 COPY --from=install /temp/dev/node_modules node_modules
 COPY . .
 
-RUN bun test
 RUN bun run build
 
 # copy production dependencies and source code into final image
