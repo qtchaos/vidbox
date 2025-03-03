@@ -7,7 +7,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"postinstall": "svelte-kit sync"
+		"prepare": "svelte-kit sync"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.7",
