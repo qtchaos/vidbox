@@ -6,4 +6,4 @@ RUN bun install
 COPY . .
 
 EXPOSE 80
-ENTRYPOINT [ "bun", "run", "preview" ]
+CMD [ "bun", "run", "preview" ]

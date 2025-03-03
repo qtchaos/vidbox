@@ -7,4 +7,4 @@ COPY . .
 
 ENV DEBUG=1
 EXPOSE 3000
-ENTRYPOINT [ "bun", "./src/index.ts" ]
+CMD [ "bun", "./src/index.ts" ]
