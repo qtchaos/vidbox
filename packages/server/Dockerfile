@@ -1,16 +1,9 @@
-# Use the Bun image as the base image
-FROM oven/bun:latest
+FROM oven/bun:1
+WORKDIR /src
+COPY / ./
 
-# Set the working directory in the container
-WORKDIR /app
+ENV DEBUG=1
+RUN bun install --production
 
-# Copy the current directory contents into the container at /app
-COPY . .
-
-RUN bun install
-
-# Expose the port on which the API will listen
 EXPOSE 3000
-
-# Run the server when the container launches
-CMD ["bun", "src/index.ts"]
+ENTRYPOINT [ "bun", "run", "start" ]
