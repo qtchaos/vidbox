@@ -22,7 +22,6 @@
 		"globals": "16.0.0",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
-		"svelte": "^5.20.5",
 		"svelte-check": "^4.1.4",
 		"tailwindcss": "4.0.9",
 		"typescript": "^5.8.2",
@@ -32,6 +31,7 @@
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.9",
 		"crypto-js": "^4.2.0",
-		"easy-crc": "^1.1.0"
+		"easy-crc": "^1.1.0",
+		"svelte": "^5.20.5"
 	}
 }
