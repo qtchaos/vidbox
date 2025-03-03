@@ -1,4 +1,3 @@
-import { serve } from "bun";
 import { version } from "./package.json";
 import { decrypt, encrypt } from "./crypto";
 import { RequestHandler } from "./requests";
