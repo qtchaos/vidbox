@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 RUN bun install --production
-RUN bun build
+RUN bun run build
 
 # Expose the port on which the API will listen
 EXPOSE 80
