@@ -6,13 +6,13 @@ services:
             context: ./packages/client
             dockerfile: Dockerfile
         ports:
-            - "127.0.0.1:80:80"
-        command: ["bun", "run", "preview"]
+            - 80/tcp
+        command: ["bun", "index.js"]
 
     backend:
         build:
             context: ./packages/server
             dockerfile: Dockerfile
         ports:
-            - "127.0.0.1:3000:3000"
+            - 3000/tcp
         command: ["bun", "run", "index.ts"]
