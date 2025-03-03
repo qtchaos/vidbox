@@ -7,8 +7,7 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
-RUN bun install --production
-RUN bunx svelte-kit sync
+RUN bun install
 RUN bun run build
 
 # Expose the port on which the API will listen
