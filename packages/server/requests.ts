@@ -16,7 +16,6 @@ export class RequestHandler {
 
     constructor(port: number) {
         this.port = port;
-        console.log(`Server started at http://localhost:${port}`);
     }
 
     /**

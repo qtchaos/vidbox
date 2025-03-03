@@ -154,9 +154,9 @@ api.registerRoute(
     }
 );
 
-serve({
+export default {
     port: PORT,
-    fetch(request) {
+    fetch(request: Request) {
         return api.handle(request);
     },
-});
+};

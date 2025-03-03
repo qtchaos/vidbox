@@ -40,6 +40,11 @@ The stream key can now be used to access the video stream using the `?k=STREAMKE
 
 Once you get access to the JavaScript logic, you can easily just paste the functions into the console and get the keys, we should prevent this by using global variables, overwriting functions (window.atob) and setting them in each key function so that the order of the keys being called is important. (or something similar)
 
+## CyberChef recipes
+
+[decrypt](https://cyberchef.org/#recipe=From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'385fde599564b1e5'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)From_Base64('A-Za-z0-9-_',true,false)AES_Decrypt(%7B'option':'UTF8','string':'ee.vidbox.client'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)From_Base64('A-Za-z0-9%2B/%3D',true,false)AES_Decrypt(%7B'option':'UTF8','string':'a3s_is_qu1te_7uf'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D,%7B'option':'Hex','string':''%7D)&input=SXVJUW9CeE1Ra2hTNFFzYzVzT1hFdmQycjdtbVVXbHROMFdHM2hpYVRIVHlKUVpTOWNhbTBiTkFidkdQUFpKZg)
+[encrypt](https://cyberchef.org/#recipe=AES_Encrypt(%7B'option':'UTF8','string':'a3s_is_qu1te_7uf'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D)To_Base64('A-Za-z0-9-_')AES_Encrypt(%7B'option':'UTF8','string':'ee.vidbox.client'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D)To_Base64('A-Za-z0-9-_')AES_Encrypt(%7B'option':'UTF8','string':'385fde599564b1e5'%7D,%7B'option':'Hex','string':''%7D,'ECB','Raw','Raw',%7B'option':'Hex','string':''%7D)To_Base64('A-Za-z0-9-_')&input=MTc1OTgyODEyNA)
+
 ## Tools
 
 -   https://obfuscator.io/

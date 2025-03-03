@@ -154,9 +154,7 @@ const _0x4b31d4 = _0x5a2d24
 
 // Recursive function that encrypts the input
 async function encrypt(input = '') {
-	console.log(input, window);
 	if (!isNaN(Number(input)) && String(input).length === 10) {
-		console.debug('Entering first stage, input:', input);
 		window.ccse3 = ['l', 'o', 'o', 'p', 'v', 'i', 'd'].join('');
 		return encrypt(
 			// prettier-ignore
@@ -169,14 +167,12 @@ async function encrypt(input = '') {
 		if (_0x2312 && window.ccse3 !== 'loopytime') {
 			_0x2312 = [231];
 		}
-		console.debug('Entering second stage, input:', input);
 
 		const jsz = encrypt(await encryptOnce(input, _x3341c + [22]));
 		_x3341c = null;
 		return jsz;
 	}
 
-	console.debug('Entering third stage, input:', input);
 	return await encryptOnce(input, _0x23912 + _0x4b31d4);
 }
 
