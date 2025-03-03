@@ -1,8 +1,9 @@
-FROM oven/bun:1
-COPY / ./
+FROM dejangegic/bun:1.0.18-smallest
 
-RUN bun install --production
-RUN bun run build
+WORKDIR /app
+COPY package*.json ./
+RUN bun install
+COPY . .
 
 EXPOSE 80
 ENTRYPOINT [ "bun", "run", "preview" ]

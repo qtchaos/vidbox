@@ -1,8 +1,10 @@
-FROM oven/bun:1
-COPY / ./
+FROM dejangegic/bun:1.0.18-smallest
+
+WORKDIR /app
+COPY package*.json ./
+RUN bun install
+COPY . .
 
 ENV DEBUG=1
-RUN bun install --production
-
 EXPOSE 3000
-ENTRYPOINT [ "bun", "run", "src/index.ts" ]
+ENTRYPOINT [ "bun", "./src/index.ts" ]
