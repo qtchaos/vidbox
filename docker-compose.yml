@@ -5,14 +5,8 @@ services:
         build:
             context: ./packages/client
             dockerfile: Dockerfile
-        ports:
-            - 80/tcp
-        command: ["bun", "run", "preview"]
 
     backend:
         build:
             context: ./packages/server
             dockerfile: Dockerfile
-        ports:
-            - 3000/tcp
-        command: ["bun", "run", "src/index.ts"]
