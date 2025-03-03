@@ -1,10 +1,16 @@
-FROM dejangegic/bun:1.0.18-smallest
+# Use the Bun image as the base image
+FROM oven/bun:latest
 
+# Set the working directory in the container
 WORKDIR /app
-COPY package*.json ./
-RUN bun install
+
+# Copy the current directory contents into the container at /app
 COPY . .
 
-ENV DEBUG=1
+RUN bun install
+
+# Expose the port on which the API will listen
 EXPOSE 3000
-CMD [ "bun", "./src/index.ts" ]
+
+# Run the server when the container launches
+CMD ["bun", "src/index.ts"]
