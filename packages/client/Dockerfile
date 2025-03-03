@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . .
 
 RUN bun install --production
-RUN bun run build
 RUN bunx svelte-kit sync
+RUN bun run build
 
 # Expose the port on which the API will listen
 EXPOSE 80
