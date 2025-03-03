@@ -13,7 +13,6 @@ RUN cd /temp/dev && bun install
 # install with --production (exclude devDependencies)
 RUN mkdir -p /temp/prod
 COPY package.json /temp/prod/
-RUN bun x svelte-kit sync
 RUN cd /temp/prod && bun install --production
 
 # copy node_modules from temp directory
