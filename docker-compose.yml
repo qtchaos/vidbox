@@ -4,6 +4,8 @@ services:
     frontend:
         build:
             context: ./packages/client
+        ports:
+            - "4173:80"
 
     backend:
         build:
