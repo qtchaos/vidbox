@@ -30,6 +30,7 @@
 		"vite": "6.2.0"
 	},
 	"dependencies": {
+		"@tailwindcss/vite": "^4.0.9",
 		"crypto-js": "^4.2.0",
 		"easy-crc": "^1.1.0"
 	}

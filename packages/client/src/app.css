@@ -1,6 +1,12 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import 'tailwindcss';
+
+@theme {
+	--color-vulcan: #0f1923;
+	--color-bunker: #0b131b;
+	--color-klunker: #070e15;
+	--color-dove: #6a6a6a;
+	--color-shark: #1d2732;
+}
 
 html {
 	font-family: 'Space Grotesk', serif;
