@@ -1,5 +1,4 @@
 FROM oven/bun:1
-WORKDIR /src
 COPY / ./
 
 RUN bun install --production
