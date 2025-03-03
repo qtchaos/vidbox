@@ -4,9 +4,7 @@ services:
     frontend:
         build:
             context: ./packages/client
-            dockerfile: Dockerfile
 
     backend:
         build:
             context: ./packages/server
-            dockerfile: Dockerfile
