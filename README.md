@@ -4,6 +4,9 @@ VidBox, a popular video streaming platform, has recently implemented a stream ke
 
 You are a security researcher who has been tasked with finding a way to bypass this security feature by creating a stream key thats valid for a longer period of time, allowing you to share this link with your friends for weeks to come, are you up for the task?
 
+<details>
+<summary>Spoilers regarding the challenge details/solution</summary>
+
 ## Strategy
 
 The browser loads a PNG file via loading.png?v=UNIXTIME[^1], this file contains the logic to generate the stream key. The provided unix time is used as the base string for the stream key if the unix time is in the future the server should error. The logic inside of the PNG should be plainly visible, obfuscated JavaScript (this would usually be WASM, but we simplify) so that the Attacker can feasibly reverse engineer the key generation process.
@@ -53,3 +56,5 @@ Once you get access to the JavaScript logic, you can easily just paste the funct
 -   https://jsfuck.com/
 -   https://enkhee-osiris.github.io/Decoder-JSFuck/
 -   https://anseki.github.io/gnirts/
+
+</details>
