@@ -5,8 +5,10 @@ services:
         build:
             context: ./packages/client
         ports:
-            - "4173:80"
+            - "127.0.0.1:4173:80"
 
     backend:
         build:
             context: ./packages/server
+        ports:
+            - "127.0.0.1:3000:3000"
