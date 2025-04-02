@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Update repository
 git pull
 
