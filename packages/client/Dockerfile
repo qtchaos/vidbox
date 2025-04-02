@@ -13,4 +13,4 @@ RUN bun run build
 EXPOSE 4173
 
 # Run the server when the container launches
-CMD ["bun", "preview"]
+CMD ["bun", "preview", "--host"]
