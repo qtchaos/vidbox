@@ -24,6 +24,10 @@ export class RequestHandler {
      * @returns A promise that contains the response
      */
     async handle(request: Request): Promise<Response> {
+        if (request.method === "OPTIONS") {
+            return this.cors();
+        }
+
         const requestURL = new URL(request.url);
         const route = requestURL.pathname;
         this.requestCount++;
@@ -53,6 +57,17 @@ export class RequestHandler {
 
         return new Response("Not found", {
             status: 404,
+        });
+    }
+
+    async cors(): Promise<Response> {
+        return new Response("OK", {
+            status: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, OPTIONS",
+                "Access-Control-Allow-Headers": "*",
+            },
         });
     }
 
