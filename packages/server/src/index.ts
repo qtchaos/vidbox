@@ -85,6 +85,7 @@ api.registerRoute(
                     "Content-Length": bytesToRead.toString(),
                     "Content-Range": `bytes=0-${bytesToRead - 1}/${bytesToRead}`,
                     "Cache-Control": "max-age=0, must-revalidate",
+                    "Access-Control-Allow-Origin": "*",
                 },
                 status: 206,
             });
@@ -94,6 +95,7 @@ api.registerRoute(
             headers: {
                 "Content-Type": "video/webm",
                 "Content-Length": file.size.toString(),
+                "Access-Control-Allow-Origin": "*",
                 "Cache-Control": "max-age=0, must-revalidate",
             },
             status: 200,

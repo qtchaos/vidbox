@@ -24,7 +24,6 @@ let window = {
 // prettier-ignore
 let _0x2312 = 363..toString(36).toLowerCase()+function(){var r=Array.prototype.slice.call(arguments),o=r.shift();return r.reverse().map(function(r,t){return String.fromCharCode(r-o-4-t)}).join("")}(46,165)+21..toString(36).toLowerCase().split("").map(function(r){return String.fromCharCode(r.charCodeAt()+-13)}).join("")+676..toString(36).toLowerCase()+function(){var r=Array.prototype.slice.call(arguments),o=r.shift();return r.reverse().map(function(r,t){return String.fromCharCode(r-o-50-t)}).join("")}(36,181);
 
-// Obfuscated CRC function meant as a red herring, you don't need to understand this function in order to complete the challenge
 function _0x5d62() {
 	const _0x32546e = [
 		'15536ZiTJsn',
