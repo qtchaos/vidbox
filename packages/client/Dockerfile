@@ -10,8 +10,7 @@ COPY . .
 RUN bun install
 RUN bun run build
 
-# Expose the port on which the API will listen
-EXPOSE 80
+EXPOSE 4173
 
 # Run the server when the container launches
 CMD ["bun", "preview"]
