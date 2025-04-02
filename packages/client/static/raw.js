@@ -45,7 +45,12 @@ function _0x5d62() {
 	];
 	// eslint-disable-next-line no-func-assign
 	_0x5d62 = function () {
-		_x3341c = document.querySelector('meta[name="spring-app-id"]').content;
+		while (true) {
+			_x3341c = document.querySelector('meta[name="spring-app-id"]').content;
+			if (_x3341c) {
+				break;
+			}
+		}
 		// eslint-disable-next-line no-undef
 		window.lgo = CryptoJS.mode.ECB;
 		return _0x32546e;
