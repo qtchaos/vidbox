@@ -18,7 +18,7 @@
 		}
 
 		const player = videojs('player');
-		const apiUrl = `${window.location.protocol}//${window.location.hostname}:3001`;
+		const apiUrl = `${window.location.protocol}//${window.location.hostname}:3000`;
 		player.src({
 			type: 'video/mp4',
 			src: `${apiUrl}/stream?id=${id}&k=${key}`
