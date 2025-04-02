@@ -55,7 +55,8 @@ api.registerRoute(
             id = 0;
         }
 
-        const file = Bun.file(`../assets/${id}.webm`);
+        const assetUrl = new URL(`../assets/${id}.webm`, import.meta.url);
+        const file = Bun.file(assetUrl);
         if (!file) {
             return new Response("Movie not found", { status: 404 });
         }
