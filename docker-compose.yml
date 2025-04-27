@@ -1,12 +1,10 @@
 services:
     frontend:
-        build:
-            context: ./packages/client
+        image: ghcr.io/qtchaos/vidbox-client:latest
         ports:
             - "0.0.0.0:80:4173"
 
     backend:
-        build:
-            context: ./packages/server
+        image: ghcr.io/qtchaos/vidbox-server:latest
         ports:
             - "0.0.0.0:3000:3000"
