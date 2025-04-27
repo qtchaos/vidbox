@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Build and Publish Docker Images
 
 on:
   push:
@@ -7,12 +7,30 @@ on:
     branches: [ "main" ]
 
 jobs:
-
-  build:
-
+  build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag vidbox:$(date +%s)
+    # Step 1: Checkout the repository
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    # Step 2: Log in to GitHub Container Registry
+    - name: Log in to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    # Step 3: Build and push the server image
+    - name: Build and Push Server Image
+      run: |
+        docker build ./packages/server -t ghcr.io/${{ github.repository_owner }}/vidbox-server:latest
+        docker push ghcr.io/${{ github.repository_owner }}/vidbox-server:latest
+
+    # Step 4: Build and push the client image
+    - name: Build and Push Client Image
+      run: |
+        docker build ./packages/client -t ghcr.io/${{ github.repository_owner }}/vidbox-client:latest
+        docker push ghcr.io/${{ github.repository_owner }}/vidbox-client:latest
